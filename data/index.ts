@@ -80,7 +80,7 @@ export const projects = [
     id: 1,
     title: "Popcorn",
     des: "A React Js Projects that fetches a movies API with some other features",
-    img: "/Popcorn.webp",
+    img: "/PopCorn.webp",
     iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/sass.svg"],
     link: "https://popcorn-2024.netlify.app/",
     repo: "https://github.com/Fawzy-uwk/popcorn",
@@ -193,7 +193,7 @@ export const workExperience = [
     title: "IT helpdesk - AA Accounting",
     desc: "Provided technical support and troubleshooting for office IT systems and software.",
     className: "md:col-span-2",
-    thumbnail: "/Experience/exp1.svg",
+    thumbnail: "/exp1.svg",
   },
 ]
 
