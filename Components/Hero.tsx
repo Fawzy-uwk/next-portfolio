@@ -24,7 +24,7 @@ export default function Hero() {
 
                 <div className="pointer-events-none absolute inset-0 bg-bg dark:bg-bg mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
-                <div className="flex justify-end md:justify-between items-center flex-col-reverse md:flex-row h-full px-4 md:px-8 lg:px-16 z-10 md:gap-10 py-10 md:py-0">
+                <div className="flex justify-end md:justify-between items-center flex-col-reverse lg:flex-row h-full px-4 md:px-8 lg:px-16 z-10 md:gap-10 py-10 md:py-0">
                     <div className="max-w-screen flex flex-col justify-center items-center md:items-start">
                         <h2 className="text-base md:text-lg z-5 lg:text-xl font-semibold text-center md:text-start text-secondary mb-2 tracking-widest">
                             Welcome to my Portfolio
@@ -36,7 +36,7 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    <img src="/hero-image.webp" alt="hero iamge" className="z-50 lg:w-[50%] h-full" />
+                    <img src="/hero-image.webp" alt="hero iamge" className="z-50 lg:w-[50%] w-full h-auto" />
                 </div>
             </div >
         </>
