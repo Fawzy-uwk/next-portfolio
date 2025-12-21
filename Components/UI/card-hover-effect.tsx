@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image from "next/image";
+
 import { useState } from "react";
 
 export const HoverEffect = ({
@@ -38,7 +38,7 @@ export const HoverEffect = ({
                         whileHover={{ scale: 1, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.5)", background: "rgba(3, 19, 35, 0.8)" }}
                         transition={{ duration: 0.2 }}
                     >
-                        <Image src={item.img} alt={item.name} className="w-16 h-16 mb-3" width={16} height={16} />
+                        <img src={item.img} alt={item.name} className="w-16 h-16 mb-3"  />
                         <h4 className="text-primary font-bold tracking-wide text-lg">{item.name}</h4>
                         <p className="mt-2 text-secondary tracking-wide leading-relaxed text-sm md:text-base text-center">{item.description}</p>
                     </motion.div>

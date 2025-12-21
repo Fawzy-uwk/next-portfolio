@@ -3,7 +3,7 @@ import { Spotlight } from "./UI/Spotlight-new";
 import { TextGenerateEffect } from "./UI/TextGenerateEffect";
 import Button from "./UI/Button";
 import { IoIosSend } from "react-icons/io";
-import Image from "next/image";
+
 
 
 export default function Hero() {
@@ -36,7 +36,7 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    <Image src="/hero-image.png" alt="hero iamge" width={600} height={200} loading="eager" className="z-50 " />
+                    <img src="/hero-image.png" alt="hero iamge" className="z-50 " />
                 </div>
             </div >
         </>
