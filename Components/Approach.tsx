@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import { AnimatePresence, motion } from "motion/react";
 import { CanvasRevealEffect } from "@/Components/UI/canvas-reveal-effect";
 import { HoverBorderGradient } from "./UI/ApproachButton";
@@ -13,7 +12,6 @@ export default function Approach() {
             </h1>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 w-full max-w-7xl mx-auto">
-                
                 <Card
                     title="Planning"
                     description="Understanding requirements, designing layout and flow."
@@ -27,7 +25,6 @@ export default function Approach() {
                     />
                 </Card>
 
-                
                 <Card
                     title="Development"
                     description="Building interactive UI components using the suitable tech stack."
@@ -41,7 +38,6 @@ export default function Approach() {
                     />
                 </Card>
 
-                
                 <Card
                     title="Deployment"
                     description="Optimizing and deploying websites for high-performance production."
@@ -76,15 +72,15 @@ const Card = ({
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-         
-            className="border group/canvas-card flex items-center justify-center border-secondary/20 max-w-sm w-full p-6 relative min-h-100 lg:h-125 overflow-hidden transition-all duration-300"
+            className="border group/canvas-card flex items-center justify-center border-secondary/20 max-w-sm w-full p-6 relative min-h-100 lg:h-125 overflow-hidden transition-all duration-300 cursor-pointer"
         >
-            
+            {/* Corner icons */}
             <Icon className="absolute h-6 w-6 -top-3 -left-3 text-primary" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-primary" />
             <Icon className="absolute h-6 w-6 -top-3 -right-3 text-primary" />
             <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-primary" />
 
+            {/* Hover/Canvas effect */}
             <AnimatePresence>
                 {hovered && (
                     <motion.div
@@ -98,18 +94,23 @@ const Card = ({
                 )}
             </AnimatePresence>
 
+            {/* Content */}
             <div className="relative z-20 w-full">
-          
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover/canvas-card:opacity-0 group-hover/canvas-card:-translate-y-10 transition duration-300 ease-in-out w-full flex items-center justify-center">
+                {/* Icon container */}
+                <div
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition duration-300 ease-in-out w-full flex items-center justify-center ${hovered ? "opacity-0 -translate-y-10" : "opacity-100 translate-y-0"
+                        }`}
+                >
                     {icon}
                 </div>
 
-           
-                <div className="opacity-0 group-hover/canvas-card:opacity-100 transition duration-300 ease-in-out delay-200 flex flex-col items-center justify-center">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-primary text-center">
-                        {title}
-                    </h2>
-                    <p className="text-sm lg:text-base text-secondary text-center mt-4 font-medium leading-relaxed">
+                {/* Title & description */}
+                <div
+                    className={`flex flex-col items-center justify-center text-center transition duration-300 ease-in-out ${hovered ? "opacity-100" : "opacity-0"
+                        }`}
+                >
+                    <h2 className="text-2xl lg:text-3xl font-bold text-primary">{title}</h2>
+                    <p className="text-sm lg:text-base text-secondary mt-4 font-medium leading-relaxed">
                         {description}
                     </p>
                 </div>
