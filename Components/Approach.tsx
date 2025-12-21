@@ -13,7 +13,7 @@ export default function Approach() {
             </h1>
 
             <div className="flex flex-col lg:flex-row items-center justify-center gap-8 px-4 w-full max-w-7xl mx-auto">
-                {/* Card 1 - Planning */}
+                
                 <Card
                     title="Planning"
                     description="Understanding requirements, designing layout and flow."
@@ -27,7 +27,7 @@ export default function Approach() {
                     />
                 </Card>
 
-                {/* Card 2 - Development */}
+                
                 <Card
                     title="Development"
                     description="Building interactive UI components using the suitable tech stack."
@@ -41,7 +41,7 @@ export default function Approach() {
                     />
                 </Card>
 
-                {/* Card 3 - Deployment */}
+                
                 <Card
                     title="Deployment"
                     description="Optimizing and deploying websites for high-performance production."
@@ -76,10 +76,10 @@ const Card = ({
         <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            // التحسين للموبايل: min-h بدلاً من h ثابت لضمان استيعاب النص الطويل
+         
             className="border group/canvas-card flex items-center justify-center border-secondary/20 max-w-sm w-full p-6 relative min-h-100 lg:h-125 overflow-hidden transition-all duration-300"
         >
-            {/* Corner Icons */}
+            
             <Icon className="absolute h-6 w-6 -top-3 -left-3 text-primary" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-primary" />
             <Icon className="absolute h-6 w-6 -top-3 -right-3 text-primary" />
@@ -99,16 +99,12 @@ const Card = ({
             </AnimatePresence>
 
             <div className="relative z-20 w-full">
-                {/* الزرار (Phase Icon): 
-            يختفي فوراً عند الـ Hover مع حركة للأعلى 
-        */}
+          
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover/canvas-card:opacity-0 group-hover/canvas-card:-translate-y-10 transition duration-300 ease-in-out w-full flex items-center justify-center">
                     {icon}
                 </div>
 
-                {/* محتوى النص (Title & Description): 
-            يظهر بـ Delay (200ms) حتى يختفي الزرار تماماً 
-        */}
+           
                 <div className="opacity-0 group-hover/canvas-card:opacity-100 transition duration-300 ease-in-out delay-200 flex flex-col items-center justify-center">
                     <h2 className="text-2xl lg:text-3xl font-bold text-primary text-center">
                         {title}

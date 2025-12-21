@@ -43,7 +43,7 @@ export const PinContainer = ({
                 containerClassName
             )}
         >
-            {/* 👇 كل الستايل والأنيميشن زي ما هو */}
+           
             <div
                 style={{
                     perspective: "1000px",
