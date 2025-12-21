@@ -21,7 +21,7 @@ export default function Hero() {
                     )}
                 />
 
-               
+
                 <div className="pointer-events-none absolute inset-0 bg-bg dark:bg-bg mask-[radial-gradient(ellipse_at_center,transparent_20%,black)]" />
 
                 <div className="flex justify-end md:justify-between items-center flex-col-reverse md:flex-row h-full px-4 md:px-8 lg:px-16 z-10 md:gap-10 py-10 md:py-0">
@@ -36,7 +36,7 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    <img src="/hero-image.png" alt="hero iamge" className="z-50 " />
+                    <img src="/hero-image.webp" alt="hero iamge" className="z-50 lg:w-[50%] h-full" />
                 </div>
             </div >
         </>
