@@ -127,7 +127,6 @@ const AceternityIcon = ({ order }: { order: string }) => {
         <div>
             <HoverBorderGradient
                 containerClassName="rounded-full"
-                as="div"
                 className="bg-bg text-primary px-8 py-2 capitalize font-bold text-lg lg:text-xl"
             >
                 {order}
