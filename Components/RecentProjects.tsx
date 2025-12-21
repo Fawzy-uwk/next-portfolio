@@ -41,7 +41,7 @@ function RecentProjects() {
                             <h1 className="font-bold text-lg md:text-xl line-clamp-1 lg:text-3xl">
                                 {project.title}
                             </h1>
-                            <p className="lg:text-base text-sm text-secondary font-light line-clamp-2">
+                            <p className="lg:text-base text-sm text-secondary font-light line-clamp-3">
                                 {project.des}
                             </p>
 
