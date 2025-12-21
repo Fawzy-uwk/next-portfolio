@@ -21,7 +21,7 @@ export const BentoGrid = ({
     return (
         <div
             className={cn(
-                
+
                 "grid grid-cols-1 md:grid-cols-6 lg:grid-cols-5 md:grid-row-7 gap-4 lg:gap-5 mx-auto",
                 className
             )}
@@ -54,18 +54,18 @@ export const BentoGridItem = ({
     return (
         <div
             className={cn(
-               
+
                 "row-span-1 relative overflow-hidden rounded-3xl border border-white/10 group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4",
                 className
             )}
             style={{
-               
+
 
                 background:
                     "linear-gradient(90deg, #001a23 0%, #1a1c33 100%)",
             }}
         >
-            
+
             <div className={`${id === 6 && "flex justify-center"} h-full`}>
                 <div className="w-full h-full absolute">
                     {img && (
@@ -77,14 +77,14 @@ export const BentoGridItem = ({
                     )}
                 </div>
                 <div
-                    className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
+                    className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-70"
                         } `}
                 >
                     {spareImg && (
                         <img
                             src={spareImg}
                             alt={spareImg}
-                            
+
                             className="object-cover object-center w-full h-full"
                         />
                     )}
@@ -99,7 +99,7 @@ export const BentoGridItem = ({
                 )}
 
 
-                
+
                 <div
                     className={cn(
                         titleClassName,
@@ -138,12 +138,12 @@ export const BentoGridItem = ({
                     )}
 
                     {id === 4 && (
-                        <div className="mt-6">
+                        <div className="md:mt-6 mt-0">
                             <a href="/Fawzy_Mohamed_CV.pdf" download >
                                 <Button
                                     title="Download CV"
                                     position="right"
-                                    moreClasses="capitalize w-30 md:w-auto"
+                                    moreClasses="capitalize mb-12 md:mb-0 mx-auto md:w-auto"
                                 />
                             </a>
                         </div>
@@ -161,7 +161,7 @@ export const BentoGridItem = ({
                                     }
 
                                 }} />
-                                <Button title={copied ? "email copied" : "copy email"} moreClasses="capitalize" icon={<IoCopyOutline />} position="left" handleClick={handleCopy} />
+                                <Button title={copied ? "email copied" : "copy email"} moreClasses="capitalize w-full" icon={<IoCopyOutline />} position="left" handleClick={handleCopy} />
                             </div>
                         </div>
                     )}
