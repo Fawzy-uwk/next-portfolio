@@ -1,30 +1,25 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 type Direction = "TOP" | "LEFT" | "BOTTOM" | "RIGHT";
 
-type HoverBorderGradientProps<T extends React.ElementType> = {
-    as?: T;
+type HoverBorderGradientProps = {
+    children: React.ReactNode;
     containerClassName?: string;
     className?: string;
     duration?: number;
     clockwise?: boolean;
-    children: React.ReactNode;
-} & React.ComponentPropsWithoutRef<T>;
+};
 
-export function HoverBorderGradient<T extends React.ElementType = "button">({
+export function HoverBorderGradient({
     children,
     containerClassName,
     className,
-    as,
     duration = 1,
     clockwise = true,
-    ...props
-}: HoverBorderGradientProps<T>) {
-    const Tag = as || "button";
-
+}: HoverBorderGradientProps) {
     const [hovered, setHovered] = useState(false);
     const [direction, setDirection] = useState<Direction>("TOP");
 
@@ -56,14 +51,13 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
     }, [hovered, duration]);
 
     return (
-        <Tag
+        <div
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className={cn(
                 "relative flex items-center justify-center rounded-full border-[3px] border-transparent p-px overflow-hidden",
                 containerClassName
             )}
-            {...props}
         >
             <div
                 className={cn(
@@ -87,6 +81,6 @@ export function HoverBorderGradient<T extends React.ElementType = "button">({
             />
 
             <div className="absolute inset-.5 rounded-full bg-black/95 z-1" />
-        </Tag>
+        </div>
     );
 }
