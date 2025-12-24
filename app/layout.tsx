@@ -15,17 +15,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Fawzy`s Portfolio",
-  description: "Welcome to my portfolio website where I showcase my projects and skills.",
+  description:
+    "Welcome to my portfolio website where I showcase my projects and skills.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider

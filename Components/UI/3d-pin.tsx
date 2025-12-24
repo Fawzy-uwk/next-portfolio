@@ -4,24 +4,32 @@ import React, { useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
+type PinContainerProps = {
+    children: React.ReactNode;
+    title?: string;
+    href?: string;
+    className?: string;
+    containerClassName?: string;
+};
+
 export const PinContainer = ({
     children,
     title,
     href,
     className,
     containerClassName,
-}: {
-    children: React.ReactNode;
-    title?: string;
-    href?: string;
-    className?: string;
-    containerClassName?: string;
-}) => {
+}: PinContainerProps) => {
     const [transform, setTransform] = useState(
         "translate(-50%,-50%) rotateX(0deg)"
     );
 
-    const openLink = () => {
+    const openLink = (
+        e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>
+    ) => {
+        // ⛔ لو الكليك على لينك أو زرار جوه الكارد، متفتحش href
+        const target = e.target as HTMLElement;
+        if (target.closest("a, button")) return;
+
         if (!href) return;
         window.open(href, "_blank", "noopener,noreferrer");
     };
@@ -31,7 +39,7 @@ export const PinContainer = ({
             role="link"
             tabIndex={0}
             onClick={openLink}
-            onKeyDown={(e) => e.key === "Enter" && openLink()}
+            onKeyDown={(e) => e.key === "Enter" && openLink(e)}
             onMouseEnter={() =>
                 setTransform("translate(-50%,-50%) rotateX(40deg) scale(0.8)")
             }
@@ -43,14 +51,14 @@ export const PinContainer = ({
                 containerClassName
             )}
         >
-           
+            {/* Card */}
             <div
                 style={{
                     perspective: "1000px",
                     transform: "rotateX(70deg) translateZ(0deg)",
                 }}
                 className="absolute left-1/2 top-1/2 ml-[0.09375rem] mt-4 
-          -translate-x-1/2 -translate-y-1/2"
+        -translate-x-1/2 -translate-y-1/2"
             >
                 <div
                     style={{ transform }}
@@ -72,7 +80,11 @@ export const PinContainer = ({
     );
 };
 
-export const PinPerspective = ({ title }: { title?: string }) => {
+type PinPerspectiveProps = {
+    title?: string;
+};
+
+export const PinPerspective = ({ title }: PinPerspectiveProps) => {
     return (
         <motion.div
             className="pointer-events-none w-full h-80 
@@ -82,7 +94,8 @@ export const PinPerspective = ({ title }: { title?: string }) => {
         >
             <div className="w-100 h-full -mt-7 inset-0">
                 <div className="absolute top-0 inset-x-0 flex justify-center">
-                    <div className="relative flex items-center z-10 
+                    <div
+                        className="relative flex items-center z-10 
             rounded-full bg-zinc-950 py-0.5 px-4 
             ring-1 ring-white/10"
                     >
@@ -91,7 +104,6 @@ export const PinPerspective = ({ title }: { title?: string }) => {
                         </span>
                     </div>
                 </div>
-
             </div>
         </motion.div>
     );
